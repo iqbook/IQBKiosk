@@ -1,0 +1,49 @@
+{
+  "name": "kyosksfinal",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/base": "^5.0.0-beta.60",
+    "@mui/material": "^6.1.5",
+    "@react-oauth/google": "^0.12.1",
+    "@reduxjs/toolkit": "^2.2.1",
+    "axios": "^1.8.4",
+    "google-libphonenumber": "^3.2.38",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.1.2",
+    "react-fast-marquee": "^1.6.5",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.3.0",
+    "react-international-phone": "^4.2.8",
+    "react-loader-spinner": "^6.1.6",
+    "react-loading-skeleton": "^3.5.0",
+    "react-redux": "^9.1.0",
+    "react-responsive-carousel": "^3.2.21",
+    "react-router-dom": "^6.22.2",
+    "react-slick": "^0.30.2",
+    "react-switch": "^7.1.0",
+    "slick-carousel": "^1.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.1.4"
+  }
+}

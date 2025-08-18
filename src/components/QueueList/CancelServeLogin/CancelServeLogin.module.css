@@ -1,0 +1,174 @@
+.barber_cancel_login_container {
+    width: 100%;
+    height: var(--primary-height);
+    display: grid;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.barber_cancel_login_left {
+    height: var(--primary-height);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 0.1rem solid rgba(0, 0, 0, 0.2);
+
+    &>img {
+        width: 50%;
+        height: 50%;
+    }
+
+    display: none;
+}
+
+.barber_cancel_login_right {
+    height: var(--primary-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.barber_cancel_main {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    &>p:nth-child(1) {
+        text-align: center;
+        font-size: var(--primary-text);
+        font-weight: 600;
+    }
+}
+
+.email_container {
+    height: 4rem;
+
+    &>input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.4);
+        font-size: var(--content-text);
+        outline: none;
+    }
+
+    &>input[type="text"]:focus {
+        border-bottom: 0.1rem solid var(--primary-color);
+    }
+}
+
+.password_container {
+    height: 4rem;
+    position: relative;
+
+    &>input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.4);
+        font-size: var(--content-text);
+        outline: none;
+    }
+
+    &>input[id="input_password"]:focus {
+        border-bottom: 0.1rem solid var(--primary-color);
+    }
+
+    &>div {
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--content-text);
+        cursor: pointer;
+    }
+
+}
+
+.signin_btn {
+    height: 4rem;
+    width: 100%;
+    margin-top: 1rem;
+    border: 0.1rem solid var(--tertiary-color);
+    color: var(--tertiary-color);
+    background-color: var(--quaternery-color);
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--tertiary-radius);
+    -webkit-border-radius: var(--tertiary-radius);
+    -moz-border-radius: var(--tertiary-radius);
+    -ms-border-radius: var(--tertiary-radius);
+    -o-border-radius: var(--tertiary-radius);
+    transition: var(--btn-transition);
+    -webkit-transition: var(--btn-transition);
+    -moz-transition: var(--btn-transition);
+    -ms-transition: var(--btn-transition);
+    -o-transition: var(--btn-transition);
+    font-size: var(--content-text);
+
+    &:hover{
+        background-color: var(--tertiary-color);
+        color: #fff;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:430px) {
+    .barber_cancel_login_container{
+        grid-template-columns: 1fr;
+    }
+
+    .barber_cancel_login_left {
+        display: none;
+    }
+
+    .barber_cancel_main{
+        width: 85vw;
+    }
+}
+
+@media screen and (min-width:431px) and (max-width:768px) {
+    .barber_cancel_login_container{
+        grid-template-columns: 1fr;
+    }
+
+    .barber_cancel_login_left {
+        display: none;
+    }
+
+    .barber_cancel_main{
+        width: 65vw;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:1000px) {
+    .barber_cancel_login_container{
+        grid-template-columns: 1fr;
+    }
+
+    .barber_cancel_login_left {
+        display: none;
+    }
+
+    .barber_cancel_main{
+        width: 45vw;
+    }
+}
+
+@media screen and (min-width:1001px) and (max-width:1250px) {
+    /* .barber_cancel_main{
+        width: 65%;
+    } */
+}
+

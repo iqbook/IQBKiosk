@@ -1,0 +1,45 @@
+.main__modal__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.824);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.modal__content {
+    width: min(55rem, 95vw);
+    /* background-color: var(--bg-primary); */
+    padding: 2rem;
+    position: relative;
+    /* border: 0.1rem solid var(--border-secondary) */
+}
+
+.modal__content>button {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    /* border: 0.1rem solid var(--border-secondary); */
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-6);
+    transition: var(--btn-transition);
+    -webkit-transition: var(--btn-transition);
+    -moz-transition: var(--btn-transition);
+    -ms-transition: var(--btn-transition);
+    -o-transition: var(--btn-transition);
+    font-size: var(--font-size-2);
+    margin-bottom: 1rem;
+}

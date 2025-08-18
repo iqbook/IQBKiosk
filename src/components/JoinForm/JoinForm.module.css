@@ -1,0 +1,94 @@
+.container {
+    height: var(--primary-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        width: 80%;
+    }
+
+    .inputWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &>p {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        &>input {
+            height: 6rem;
+            /* background-color: #0BA3AD0D; */
+            outline: none;
+            border-radius: 1rem;
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+            padding-inline: 1.5rem;
+            font-weight: 500;
+        }
+    }
+
+    .mobileInputWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &>p {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .phoneInput {
+            height: 6rem;
+            /*background-color: #0BA3AD0D;
+            */border: none;
+            outline: none;
+            padding-inline: 1.5rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+}
+
+        .phoneInput input {
+            border: none !important;
+            outline: none !important;
+            background: transparent;
+            font-weight: 500;
+            /* font-size: 1rem; */
+        }
+
+    }
+
+    .btn {
+        height: 6rem;
+        /* background-color: #0BA3AD; */
+        border: none;
+        outline: none;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        padding-inline: 1.5rem;
+        font-weight: 500;
+        /* color: #fff; */
+        cursor: pointer;
+    }
+}
+
+
+.error_message {
+    margin-top: 1rem;
+    font-size: 1.4rem !important;
+    color: red;
+    font-weight: 500;
+}

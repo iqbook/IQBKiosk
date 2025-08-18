@@ -1,0 +1,272 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'normalize.css';
+@import 'react-international-phone/style.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+h1,
+h1,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #000;
+}
+
+
+:root {
+  font-size: 62.5%;
+  /* --primary-color: #000;
+  --secondary-color: #fff;
+  --tertiary-color: #EEEDED;
+  --tertiary-color-2: #A4A4A4;
+  --tertiary-color-3: #3b3b3bca;
+  --quarterny-color: #87a96b;
+  --queue-modal-bg: #87a96b;
+  --dashboard_bf-color: #F2F0F0; */
+
+  /* light theme color */
+  --primary-color: #000;
+  --secondary-color: #efefef;
+  --primary-bg-color: #efefef;
+
+  --tertiary-color: red;
+  --quaternery-color: rgba(255, 0, 0, 0.144);
+
+  /* font sizes */
+  --primary-text: clamp(1.6rem, 1.2rem + 0.4vw, 3.2rem);
+  --btn-text: clamp(1.4rem, 1rem + 0.2vw, 3rem);
+  --btn-icon: clamp(1.4rem, 1rem + 0.2vw, 3rem);
+  --content-text: clamp(1.4rem, 1.2rem + 0.2vw, 3rem);
+  --content-error-text: clamp(1.4rem, 1.2rem + 0.2vw, 3rem);
+
+  --secondary-text: clamp(1.6rem, 1.2rem + 0.4vw, 3.2rem);
+  --secondary-icon: clamp(1.4rem, 1rem + 0.2vw, 3rem);
+  --tertiary-text: clamp(1.4rem, 1rem + 0.2vw, 3rem);
+  --quaternary-content-text: clamp(1.4rem, 1.2rem + 0.2vw, 3rem);
+
+  /* padding */
+  --primary-padding: 0.6em 1em;
+  --secondary-padding: 0.5em 1em;
+
+  /* heights */
+  --primary-height: calc(100svh - 7rem);
+  --secondary-height: calc(100svh - 7rem - 4rem)
+    /* border-Radius */
+    --primary-radius: 0.6rem;
+  --secondary-radius: 2rem;
+  --tertiary-radius: 0.3rem;
+
+  /* transiton */
+  --btn-transition: 0.3s all ease;
+
+  /* modal button height & width */
+  --mdl-sbt-btn-height: 4rem;
+  --mdl-sbt-btn-width: 10rem;
+
+  /* box-shadow */
+
+  --cmmn-box-shadow-y: 0rem 0.1rem 0.6rem rgba(0, 0, 0, 0.2);
+  --cmmn-box-shadow-x: 0.1rem 0rem 0.6rem rgba(0, 0, 0, 0.2);
+
+
+
+
+
+
+
+  /* New variables */
+
+  --bg-primary: #09090B;
+  --bg-secondary: #e11d48;
+  --bg-tertiary: #585858;
+
+  --bg-hover-primary: #27272A80;
+  --bg-secondary-hover: #e11d48e6;
+  --btn-primary-hover: #27272A;
+
+  --input-bg-color: #27272A80;
+
+  --common-btn-transition: 0.3s all ease;
+
+  --text-primary: #F4F4F5;
+  --text-secondary: #F4F4F5B2;
+
+  --border-primary: #F4F4F5B2;
+  --border-secondary: hsl(240, 3.7%, 15.9%);
+
+  --border-radius-primary: 0.4rem;
+
+  --font-primary: 1.4rem;
+  --font-secondary: 1.2rem;
+  --font-tertiary: 1.6rem;
+
+  --color-1: #8ab4f8;
+  --color-2: #0d58d2;
+  --color-3: #174ea61d;
+  --color-4: #ae0581;
+  --color-5: #72045523;
+  --color-6: rgb(244, 67, 54);
+  --color-7: rgba(244, 67, 54, 0.103);
+  --color-8: #00A36C;
+  --color-9: #00a36d15;
+  --color-10: #CC5500;
+  --color-11: #cc550016;
+
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/* *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+*:hover::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.7rem;
+}
+
+*:hover::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: var(--primary-radius, 0.6rem);
+  -webkit-border-radius: var(--primary-radius, 0.6rem);
+  -moz-border-radius: var(--primary-radius, 0.6rem);
+  -ms-border-radius: var(--primary-radius, 0.6rem);
+  -o-border-radius: var(--primary-radius, 0.6rem);
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-secondary-hover);
+}
+
+*:hover::-webkit-scrollbar-corner {
+  background-color: transparent;
+} */
+
+.page_loader {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* .react-international-phone-input-container .react-international-phone-input,
+.react-international-phone-input-container .react-international-phone-country-selector-button {
+  border: none !important;
+  background: transparent !important;
+}
+
+.react-international-phone-input-container .react-international-phone-input {
+  font-size: var(--content-text) !important;
+}
+
+.react-international-phone-input-container {
+  height: 4rem !important;
+  font-size: var(--content-text) !important;
+} */
+
+
+.react-international-phone-input-container {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.react-international-phone-input-container .react-international-phone-input {
+  width: 100%;
+  min-height: 3.5rem !important;
+  max-height: 3.5rem !important;
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  border-radius: var(--input-border-radius) !important;
+  -webkit-border-radius: var(--input-border-radius) !important;
+  -moz-border-radius: var(--input-border-radius) !important;
+  -ms-border-radius: var(--input-border-radius) !important;
+  -o-border-radius: var(--input-border-radius) !important;
+  /* color: var(--text-primary); */
+}
+
+.react-international-phone-input-container .react-international-phone-country-selector-button {
+  background-color: transparent !important;
+  min-height: 3.5rem !important;
+  width: 6rem !important;
+  border: none !important;
+  border-top-left-radius: var(--input-border-radius) !important;
+  border-bottom-left-radius: var(--input-border-radius) !important;
+}
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: none !important;
+} */
+
+
+@media screen and (min-width:1921px) and (max-width:2250px) {
+  :root {
+    font-size: 72.5%;
+  }
+}
+
+@media screen and (min-width:2261px) and (max-width:2580px) {
+  :root {
+    font-size: 82.5%;
+  }
+}
+
+@media screen and (min-width:2581px) and (max-width:3000px) {
+  :root {
+    font-size: 92.5%;
+  }
+}
+
+@media screen and (min-width:3001px) and (max-width: 3400px) {
+  :root {
+    font-size: 102.5%;
+  }
+}
+
+@media screen and (min-width:3401px) and (max-width: 3768px) {
+  :root {
+    font-size: 112.5%;
+  }
+}
+
+@media screen and (min-width:3769px) and (max-width: 4000px) {
+  :root {
+    font-size: 122.5%;
+  }
+}
+
+@media screen and (min-width:4001px) and (max-width:4560px) {
+  :root {
+    font-size: 132.5%;
+  }
+}
+
+@media screen and (min-width:4561px) {
+  :root {
+    font-size: 142.5%;
+  }
+}

@@ -1,0 +1,28 @@
+.container {
+    height: var(--primary-height);
+    /* background-image: url('./dashboardImage.png'); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    bottom: 0rem;
+    width: 100%;
+    height: 10rem;
+    background-color: #1111117D;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+
+    &>p {
+        font-size: 2rem;
+        color: #fff;
+    }
+}

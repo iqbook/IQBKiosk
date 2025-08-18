@@ -1,0 +1,214 @@
+.section {
+    height: var(--primary-height);
+    width: 100vw;
+    /* background-color: var(--bg-primary); */
+    overflow: auto;
+    display: flex;
+    padding-block: 4rem;
+
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        width: min(90vw, 95vw);
+        margin-inline: auto;
+
+        &>div:nth-child(1) {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 4rem;
+            justify-content: space-between;
+
+            &>div:nth-child(1) {
+                display: flex;
+                align-items: flex-end;
+                gap: 2rem;
+
+                &>img {
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    /* border: 0.1rem solid var(--border-secondary); */
+                    object-fit: cover;
+                }
+
+                &>div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    &>h2 {
+                        font-size: clamp(1.8rem, 1vw, 2.4rem);
+                    }
+
+                    &>p {
+                        display: flex;
+                        gap: 1rem;
+                        opacity: 0.6;
+                        font-weight: 500;
+                        /* color: var(--text-secondary); */
+                        font-size: 1.4rem;
+
+                        &>span {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+
+            &>div:nth-child(2) {
+                display: flex;
+                gap: 2rem;
+                align-items: center;
+
+                &>div:nth-child(1) {
+                    display: flex;
+                    gap: 2rem;
+                    /* border: 0.1rem solid var(--border-secondary); */
+                    position: relative;
+                    border-radius: 0.4rem;
+                    -webkit-border-radius: 0.4rem;
+                    -moz-border-radius: 0.4rem;
+                    -ms-border-radius: 0.4rem;
+                    -o-border-radius: 0.4rem;
+
+                    &>button {
+                        height: 3.5rem;
+                        width: 10rem;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        z-index: 2;
+                        font-weight: 500;
+                    }
+
+                    &>div {
+                        width: 10rem;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        transition: left 0.3s ease-in-out;
+                        border-radius: 0.4rem;
+                        -webkit-border-radius: 0.4rem;
+                        -moz-border-radius: 0.4rem;
+                        -ms-border-radius: 0.4rem;
+                        -o-border-radius: 0.4rem;
+                        -webkit-transition: left 0.3s ease-in-out;
+                        -moz-transition: left 0.3s ease-in-out;
+                        -ms-transition: left 0.3s ease-in-out;
+                        -o-transition: left 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        &>div:nth-child(2) {
+            flex: 1;
+            min-height: 50rem;
+            /* overflow: auto; */
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 1.5rem;
+
+            .attendence_item {
+                /* height: 20rem; */
+                max-width: calc(25% - 1.5rem);
+                flex: 1 1 calc(25% - 1.5rem);
+                /* background-color: oklch(.205 0 0); */
+                /* border: 0.1rem solid oklch(1 0 0 / 15%); */
+                padding: 2rem;
+                border-radius: var(--border-radius-primary);
+                -webkit-border-radius: var(--border-radius-primary);
+                -moz-border-radius: var(--border-radius-primary);
+                -ms-border-radius: var(--border-radius-primary);
+                -o-border-radius: var(--border-radius-primary);
+
+                &>div:nth-child(1) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &>p {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                    }
+
+                    &>div {
+                        height: 3.5rem;
+                        width: 12rem;
+                        /* background-color: var(--bg-primary); */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 1rem;
+                        -webkit-border-radius: 1rem;
+                        -moz-border-radius: 1rem;
+                        -ms-border-radius: 1rem;
+                        -o-border-radius: 1rem;
+
+                        &>p {
+                            font-weight: 500;
+                            font-size: 1.4rem;
+                            opacity: 0.6;
+                            /* color: var(--text-secondary); */
+                        }
+                    }
+                }
+
+                &>div:nth-child(2) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 4rem;
+
+                    &>div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 1rem;
+
+                        &>p:nth-child(1) {
+                            /* color: var(--text-secondary); */
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                            opacity: 0.6;
+                        }
+
+                        &>p:nth-child(2) {
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .skeleton {
+                flex: 1 1 calc(25% - 1.5rem);
+                height: 20rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust breakpoint as needed */
+    .attendence_item {
+        flex: 1 !important;
+        max-width: 100% !important;
+    }
+
+    .skeleton {
+        min-width: 90vw;
+    }
+}
