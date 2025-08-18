@@ -1402,7 +1402,7 @@ const Public = () => {
         }}
         className={style.button}>
         <TouchIcon size={"2.5rem"} color='#fff' />
-        <p>Touch to Join Queue</p>
+        <p>Touch to Join Queues</p>
       </button>
 
       {/* <img
