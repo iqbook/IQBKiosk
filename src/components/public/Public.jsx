@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import style from './Public.module.css';
 import { TouchIcon } from '../../icons';
 import { useNavigate } from 'react-router-dom';
-import dashboardImage from '../../assets/dashboardImage.png'
+import dashboardImage from '../../assets/dashboardImage.webp'
 import { useSelector } from 'react-redux';
 import { selectCurrentAdminInfo } from '../AdminSignin/adminauthSlice';
 import { useGetDefaultSalonByKioskMutation } from './publicApiSlice';

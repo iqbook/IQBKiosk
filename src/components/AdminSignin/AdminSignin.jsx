@@ -205,7 +205,7 @@ const AdminSignin = () => {
 
                 <div className={style.admin_signin_form_container}>
                     <div><img
-                        src="./IQB-Logo.png" alt="iqb_logo"
+                        src="./iqbook.png" alt="iqb_logo"
                         style={{
                             filter: currentTheme === "Dark" ? "brightness(0) invert(1)" : "brightness(0) invert(0)"
                         }}
