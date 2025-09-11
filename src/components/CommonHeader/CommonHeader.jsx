@@ -20,7 +20,7 @@ const CommonHeader = () => {
     const { getDefaultAdminData, setGetDefaultAdminData } = useSocket()
     const connectedSalonId = localStorage.getItem("ConnectedSalonId")
 
-    console.log("Barber Connected Salon ", connectedSalonId)
+    // console.log("Barber Connected Salon ", connectedSalonId)
 
     const [
         getDefaultSalonByAdmin,
@@ -32,8 +32,6 @@ const CommonHeader = () => {
             isLoading: getDefaultSalonByAdminisLoading
         }
     ] = useGetDefaultSalonByKioskMutation()
-
-    // console.log("From api ", getDefaultSalonByAdmindata)
 
     useEffect(() => {
         if (
@@ -290,7 +288,7 @@ const CommonHeader = () => {
                             >
                                 <div>
                                     <div><PersonIcon /></div>
-                                    <p>Barbers on duty</p>
+                                    <p>{getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barbers" : "Stylists"} on duty</p>
                                 </div>
                                 <b>{getDefaultAdminData.barbersOnDuty}</b>
                             </div>

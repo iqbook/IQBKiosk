@@ -1,6 +1,6 @@
 import { IoSettingsSharp } from "react-icons/io5";
 import { IoIosColorPalette, IoMdArrowDropdownCircle } from "react-icons/io";
-import { FaCheck, FaPlus, FaRegClock, FaRegEyeSlash } from "react-icons/fa6";
+import { FaArrowLeft, FaArrowLeftLong, FaCheck, FaPlus, FaRegClock, FaRegEyeSlash } from "react-icons/fa6";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { IoArrowBack } from "react-icons/io5"
 import { RxCross2 } from "react-icons/rx";
@@ -44,3 +44,4 @@ export const NextQueueIcon = MdPeopleAlt
 export const TouchIcon = MdOutlineTouchApp 
 export const SearchIcon = IoSearch 
 export const BarberIcon = IoPersonOutline
+export const LeftArrowIcon = FaArrowLeftLong

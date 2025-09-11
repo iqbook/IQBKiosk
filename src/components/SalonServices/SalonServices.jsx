@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './SalonServices.module.css';
-import { AddIcon, CheckIcon, ClockIcon, DeleteIcon, SearchIcon } from '../../icons';
+import { AddIcon, CheckIcon, ClockIcon, DeleteIcon, LeftArrowIcon, SearchIcon } from '../../icons';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
@@ -123,6 +123,11 @@ const SalonServices = () => {
         backgroundColor: colors.color4,
         height: selectedServices.length > 0 ? "calc(var(--primary-height) - 7rem)" : "var(--primary-height)"
       }}>
+        <div>
+          <button onClick={() => navigate("/joinForm")}><LeftArrowIcon /></button>
+          <p>Select Services</p>
+        </div>
+
         <div>
           <div>
             <input

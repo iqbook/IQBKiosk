@@ -12,6 +12,7 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6'
 import { ClickAwayListener, Skeleton } from '@mui/material';
 import { useGoogleLogin } from '@react-oauth/google'
 import axios from 'axios'
+import { useGetDefaultSalonByKioskMutation } from '../../public/publicApiSlice'
 
 const Signin = () => {
 
@@ -175,6 +176,14 @@ const Signin = () => {
         },
     });
 
+    const [
+        getDefaultSalonByAdmin,
+        {
+            data: getDefaultSalonByAdmindata
+        }
+    ] = useGetDefaultSalonByKioskMutation();
+
+
     return (
         <main className={style.barber_signin_container}
             style={{
@@ -186,7 +195,7 @@ const Signin = () => {
             </div>
             <div className={style.barber_signin_container_right}>
                 <main className={style.barber_signin_content_main}>
-                    <h2>Welcome to Barber SignIn</h2>
+                    <h2>Welcome to {getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barber" : "Stylist"} SignIn</h2>
 
                     <ClickAwayListener onClickAway={() => setDrop(false)}>
                         <div
@@ -194,7 +203,7 @@ const Signin = () => {
                             className={style.barber_email_selection_container} onClick={dropdownHandler}>
                             <input
                                 type="text"
-                                placeholder='Search Barber'
+                                placeholder={`Search ${getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barber" : "Stylist"}`}
                                 value={barberemail}
                                 onChange={(e) => setBarberEmailHandler(e)}
                                 onKeyDown={handleKeyPress}

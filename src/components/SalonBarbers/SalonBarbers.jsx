@@ -9,7 +9,7 @@ import { formatMinutesToHrMin } from '../../utils/formatMinutesToHrMin';
 import { useGetBarberByServicesKioskMutation } from './salonBarbersApiSlice';
 import { Box, Modal, Skeleton, Typography } from '@mui/material';
 import toast from 'react-hot-toast';
-import { BarberIcon, CheckIcon, NextQueueIcon } from '../../icons';
+import { BarberIcon, CheckIcon, LeftArrowIcon, NextQueueIcon } from '../../icons';
 import { useJoinQueueKioskMutation } from '../JoinQueue/joinqueueApiSlice';
 import { ColorRing } from 'react-loader-spinner';
 
@@ -152,6 +152,11 @@ const SalonBarbers = () => {
                     backgroundColor: colors.color4,
                 }}
             >
+                <div>
+                    <button onClick={() => navigate("/salonServices")}><LeftArrowIcon /></button>
+                    <p>Select {getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barber" : "Stylist"}</p>
+                </div>
+
                 <div style={{
                     // marginBottom: "7rem"
                 }}>
