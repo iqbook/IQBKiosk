@@ -1,20 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./SalonBarbers2.module.css"; // replace with actual file
-import { Modal, Box } from "@mui/material";
+import { Modal, Box, Skeleton } from "@mui/material";
 import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { LeftArrowIcon } from "../../icons";
+import { BarberIcon, LeftArrowIcon } from "../../icons";
 import { useGetDefaultSalonByKioskMutation } from "../public/publicApiSlice";
-import { useGetBarberByServicesKioskQuery } from "./salonBarbers2ApiSlice";
+import { useGetAvailableBarbersForQKioskMutation } from "./salonBarbers2ApiSlice";
+import { formatMinutesToHrMin } from "../../utils/formatMinutesToHrMin";
+import { useGlobal } from "../../context/GlobalContext";
 
 const SalonBarbers2 = () => {
 
+    const {
+        selectedServices,
+        setSelectedServices,
+        selectBarber,
+        setSelectedBarber,
+        customerName,
+        setCustomerName,
+        customerEmail,
+        setCustomerEmail,
+        mobileNumber,
+        setMobileNumber,
+        countryflag,
+        setCountryFlag,
+        mobileCountryCode,
+        setMobileCountryCode
+    } = useGlobal()
+
+
     const connectedSalonId = localStorage.getItem("ConnectedSalonId")
 
-    const { data, error, isLoading, isFetching } = useGetBarberByServicesKioskQuery();
 
-    console.log("dsvsdv ", data)
+    const [
+        getAvailableBarbersForQKiosk,
+        {
+            data: getAvailableBarbersForQKioskData,
+            isLoading: getAvailableBarbersForQKiosksLoading
+        }
+    ] = useGetAvailableBarbersForQKioskMutation();
+
+    useEffect(() => {
+        if (connectedSalonId) {
+            getAvailableBarbersForQKiosk(connectedSalonId)
+        }
+
+    }, [])
 
     const [
         getDefaultSalonByAdmin,
@@ -23,9 +55,6 @@ const SalonBarbers2 = () => {
         }
     ] = useGetDefaultSalonByKioskMutation();
 
-    const [previewModal, setPreviewModal] = useState(false);
-    const [selectBarber, setSelectBarber] = useState(null);
-    const [joinQueueKioskloading, setJoinQueueKioskloading] = useState(false);
 
     const totalPrice = 120;
     const totalServices = 2;
@@ -34,9 +63,9 @@ const SalonBarbers2 = () => {
     const navigate = useNavigate()
     const { colors } = useSelector(state => state.theme);
     const { modecolors } = useSelector(state => state.modeColor)
+    const { currentTheme } = useSelector(state => state.theme);
 
     const continueHandler = () => {
-
         navigate("/salonServices2")
     }
 
@@ -55,78 +84,104 @@ const SalonBarbers2 = () => {
 
                 {/* Dummy list of barbers */}
                 <div>
-                    <button
-                        onClick={() => setSelectBarber({ barberId: 1, name: "John Doe" })}
-                        className={style.barberCard}
-                        style={{
-                            backgroundColor: "#fff",
-                            border:
-                                selectBarber?.barberId === 1
-                                    ? "0.2rem solid blue"
-                                    : "0.1rem solid gray",
-                        }}
-                    >
-                        <div>
-                            <img
-                                src="https://via.placeholder.com/80"
-                                alt="barber"
-                                style={{ border: "0.1rem solid gray" }}
-                            />
-                            <h4>John Doe</h4>
-                            <p style={{ fontSize: "1.4rem", textAlign: "center" }}>~15m</p>
-                        </div>
-                    </button>
+                    {
+                        getAvailableBarbersForQKiosksLoading ? (
+                            <>
+                                <Skeleton variant="rectangular" className={style.barberCardLoader} />
+                                <Skeleton variant="rectangular" className={style.barberCardLoader} />
+                                <Skeleton variant="rectangular" className={style.barberCardLoader} />
+                                {/* <Skeleton variant="rectangular" className={style.barberCardLoader} /> */}
+                            </>
+                        ) : getAvailableBarbersForQKioskData?.response?.length > 0 ? (
+                            getAvailableBarbersForQKioskData?.response?.map((item, index) => {
+                                return (
+                                    <button
+                                        onClick={() => {
+                                            setSelectedBarber(item)
+                                        }}
+                                        key={item?.barberId}
+                                        className={style.barberCard}
+                                        style={{
+                                            backgroundColor: colors.cardColor,
+                                            border: selectBarber?.barberId === item?.barberId && currentTheme === "Dark" && modecolors.color1 === "#000000" ?
+                                                '0.2rem solid #fff' : selectBarber?.barberId === item?.barberId ? `0.2rem solid ${modecolors.color1}` : `0.1rem solid ${colors.queueBorder}`
+                                        }}
+                                    >
+                                        <div>
+                                            <img src={item?.profile?.[0]?.url} alt="" style={{ border: `0.1rem solid ${colors.borderColor}` }} />
+                                            <h4>{item?.name}</h4>
+                                            <p style={{
+                                                fontSize: "1.4rem",
+                                                textAlign: "center"
+                                            }}>~{formatMinutesToHrMin(item?.barberEWT)}</p>
+                                        </div>
 
-                    <button
-                        onClick={() => setSelectBarber({ barberId: 2, name: "Jane Smith" })}
-                        className={style.barberCard}
-                        style={{
-                            backgroundColor: "#fff",
-                            border:
-                                selectBarber?.barberId === 2
-                                    ? "0.2rem solid blue"
-                                    : "0.1rem solid gray",
-                        }}
-                    >
-                        <div>
-                            <img
-                                src="https://via.placeholder.com/80"
-                                alt="barber"
-                                style={{ border: "0.1rem solid gray" }}
-                            />
-                            <h4>Jane Smith</h4>
-                            <p style={{ fontSize: "1.4rem", textAlign: "center" }}>~20m</p>
-                        </div>
-                    </button>
+                                    </button>
+                                )
+                            })
+                        ) : (
+                            <div className={style.noBarberContainer}>
+                                <div
+                                    className={style.successbody}
+                                    style={{
+                                        border: `0.1rem solid ${colors.queueBorder}`,
+                                        backgroundColor: colors.cardColor
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            background: `${modecolors.color1}1A`
+                                        }}
+                                    >
+                                        <BarberIcon
+                                            style={{
+                                                color: currentTheme === "Dark" && modecolors.color1 === "#000000" ? "#fff" : modecolors.color1
+                                            }}
+                                            size={"3.6rem"} /></div>
+
+                                    <h2>No {getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barbers" : "Stylists"}</h2>
+                                    <p> No {getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "barbers" : "stylists"} available</p>
+
+                                </div>
+                            </div>
+                        )
+                    }
+
+
                 </div>
             </main>
 
             {/* Bottom Bar */}
-            <div
-                className={style.bottomContainer}
-                style={{
-                    backgroundColor: colors.cardColor,
-                    borderTop: `0.1rem solid ${colors.queueBorder}`
-                }}
-            >
-                <div>
+            {
+                selectBarber && (
+                    <div
+                        className={style.bottomContainer}
+                        style={{
+                            backgroundColor: colors.cardColor,
+                            borderTop: `0.1rem solid ${colors.queueBorder}`
+                        }}
+                    >
+                        {/* <div>
                     <h3>$ {totalPrice.toFixed(2)}</h3>
                     <p>
                         {totalServices} services | {totalTime}
                     </p>
-                </div>
+                </div> */}
+                        <div />
 
-                <button
-                    style={{
-                        backgroundColor: modecolors.color1,
-                        color: modecolors?.color2
-                    }}
-                    onClick={continueHandler}
-                    className={style.btn}
-                >
-                    Continue
-                </button>
-            </div>
+                        <button
+                            style={{
+                                backgroundColor: modecolors.color1,
+                                color: modecolors?.color2
+                            }}
+                            onClick={continueHandler}
+                            className={style.btn}
+                        >
+                            Continue
+                        </button>
+                    </div>
+                )
+            }
 
         </>
     );

@@ -5,7 +5,7 @@ const themeColors = {
         color1: "#09090B",
         color2: "#585858",
         inputColor: "#27272A80",
-        borderColor: "hsl(240, 3.7%, 15.9%)",
+        borderColor: "hsla(240, 42%, 12%, 1.00)",
         color3: "#fff",
         textColor: "#F4F4F5B2",
         color4: "#111827",

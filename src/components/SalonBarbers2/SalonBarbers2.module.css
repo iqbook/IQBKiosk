@@ -31,7 +31,8 @@
     }
 
     &>div:nth-child(2) {
-        width: 95%;
+        /* width: 95%; */
+        width: 100%;
         display: flex;
         flex: 1;
         flex-wrap: wrap;
@@ -172,7 +173,7 @@
         -o-border-radius: 0.5rem;
         border: none;
         outline: none;
-        width: 10rem;
+        width: 20rem;
         height: 4rem;
         cursor: pointer;
     }

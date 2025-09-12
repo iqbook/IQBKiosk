@@ -24,7 +24,7 @@
             cursor: pointer;
         }
 
-        &>p{
+        &>p {
             font-size: 1.8rem;
             font-weight: 500;
         }
@@ -185,7 +185,7 @@
         border: none;
         outline: none;
         color: #fff;
-        width: 10rem;
+        width: 20rem;
         height: 4rem;
         cursor: pointer;
     }

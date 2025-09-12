@@ -3,10 +3,10 @@ import { apiSlice } from "../app/api/apiSlice"
 export const salonServices2ApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
         getServicesByBarberKiosk: builder.mutation({
-            query: ({ salonId, serviceCategoryName }) => ({
+            query: ({ salonId, barberId }) => ({
                 url: '/kiosk/getServicesByBarberKiosk',
-                method: 'GET',
-                params: {
+                method: 'POST',
+                body: {
                     barberId,
                     salonId
                 }

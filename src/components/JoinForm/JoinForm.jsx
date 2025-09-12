@@ -256,6 +256,10 @@ const JoinForm = () => {
                         onClick={() => {
                             navigate("/salonBarbers2")
                         }}
+                        style={{
+                            backgroundColor: colors.color4,
+                            border: `0.1rem solid ${colors.borderColor}`
+                        }}
                     >
                         <div>
                             <div><PersonIcon /></div>
@@ -268,7 +272,12 @@ const JoinForm = () => {
                     <button
                         onClick={() => {
                             navigate("/salonServices")
-                        }}>
+                        }}
+                        style={{
+                            backgroundColor: colors.color4,
+                            border: `0.1rem solid ${colors.borderColor}`
+                        }}
+                    >
                         <div>
                             <div><ScissorIcon /></div>
                             <p>Services</p>

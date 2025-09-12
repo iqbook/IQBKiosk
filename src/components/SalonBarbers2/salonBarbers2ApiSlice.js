@@ -2,14 +2,14 @@ import { apiSlice } from "../app/api/apiSlice";
 
 export const salonBarbers2ApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
-        getBarberByServicesKiosk: builder.query({
-            query: () => ({
+        getAvailableBarbersForQKiosk: builder.mutation({
+            query: (salonId) => ({
                 url: `/kiosk/getAvailableBarbersForQKiosk`,
                 method: "GET",
-                params: { salonId: 1 },
+                params: { salonId },
             }),
         }),
     }),
 });
 
-export const { useGetBarberByServicesKioskQuery } = salonBarbers2ApiSlice;
+export const { useGetAvailableBarbersForQKioskMutation } = salonBarbers2ApiSlice;
