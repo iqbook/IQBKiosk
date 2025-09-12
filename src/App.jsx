@@ -32,6 +32,8 @@ const BarberKiyoskDashboardProtect = React.lazy(() => import("./components/Prote
 const JoinForm = React.lazy(() => import("./components/JoinForm/JoinForm"))
 const SalonServices = React.lazy(() => import("./components/SalonServices/SalonServices"))
 const SalonBarbers = React.lazy(() => import("./components/SalonBarbers/SalonBarbers"))
+const SalonServices2 = React.lazy(() => import("./components/SalonServices2/SalonServices2"))
+const SalonBarbers2 = React.lazy(() => import("./components/SalonBarbers2/SalonBarbers2"))
 const JoinQueuePage = React.lazy(() => import("./components/JoinQueuePage/JoinQueuePage"))
 const JoinQueueSuccess = React.lazy(() => import("./components/JoinQueueSuccess/JoinQueueSuccess"))
 
@@ -135,6 +137,8 @@ const App = () => {
                     <Route path="/joinForm" element={<JoinForm />} />
                     <Route path="/salonServices" element={<SalonServices />} />
                     <Route path="/salonBarbers" element={<SalonBarbers />} />
+                    <Route path="/salonServices2" element={<SalonServices2 />} />
+                    <Route path="/salonBarbers2" element={<SalonBarbers2 />} />
                     <Route path="/joinQueuePage" element={<JoinQueuePage />} />
                     <Route path="/joinQueueSuccess" element={<JoinQueueSuccess />} />
                   </Route>

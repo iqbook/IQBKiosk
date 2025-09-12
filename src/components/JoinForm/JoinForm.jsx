@@ -7,6 +7,9 @@ import toast from 'react-hot-toast';
 import { selectCurrentAdminInfo } from '../AdminSignin/adminauthSlice';
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import { useGlobal } from '../../context/GlobalContext';
+import Modal from '@mui/material/Modal';
+import { Box } from '@mui/material';
+import { PersonIcon, RightIcon, ScissorIcon } from '../../icons';
 
 const JoinForm = () => {
 
@@ -146,17 +149,10 @@ const JoinForm = () => {
             return setEmailError("Invalid email format");
         }
 
-        // navigate("/salonServices", {
-        //     state: {
-        //         customerName,
-        //         customerEmail,
-        //         mobileNumber,
-        //         countryflag
-        //     }
-        // });
-
-        navigate("/salonServices")
+        setQueueOptionModal(true)
     }
+
+    const [QueueOptionModal, setQueueOptionModal] = useState(false)
 
     return (
         <main
@@ -239,6 +235,49 @@ const JoinForm = () => {
                     onClick={() => continueHandler()}
                 >Continue</button>
             </div>
+
+
+            <Modal
+                open={QueueOptionModal}
+                onClose={() => setQueueOptionModal(false)}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box
+                    className={style.modalContainer}
+                    sx={{
+                        backgroundColor: colors.cardColor,
+                        border: `0.1rem solid ${colors.queueBorder}`
+                    }}
+                >
+                    <h2>Queue Joined With</h2>
+
+                    <button
+                        onClick={() => {
+                            navigate("/salonBarbers2")
+                        }}
+                    >
+                        <div>
+                            <div><PersonIcon /></div>
+                            <p>Barber</p>
+                        </div>
+
+                        <div><RightIcon /></div>
+                    </button>
+
+                    <button
+                        onClick={() => {
+                            navigate("/salonServices")
+                        }}>
+                        <div>
+                            <div><ScissorIcon /></div>
+                            <p>Services</p>
+                        </div>
+
+                        <div><RightIcon /></div>
+                    </button>
+                </Box>
+            </Modal>
 
         </main>
     )

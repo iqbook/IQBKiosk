@@ -1,7 +1,7 @@
 import { IoSettingsSharp } from "react-icons/io5";
 import { IoIosColorPalette, IoMdArrowDropdownCircle } from "react-icons/io";
-import { FaArrowLeft, FaArrowLeftLong, FaCheck, FaPlus, FaRegClock, FaRegEyeSlash } from "react-icons/fa6";
-import { RiDeleteBinFill } from "react-icons/ri";
+import { FaArrowLeft, FaArrowLeftLong, FaCheck, FaChevronRight, FaPlus, FaRegClock, FaRegEyeSlash } from "react-icons/fa6";
+import { RiDeleteBinFill, RiScissorsCutLine } from "react-icons/ri";
 import { IoArrowBack } from "react-icons/io5"
 import { RxCross2 } from "react-icons/rx";
 import { RiAccountCircleFill } from 'react-icons/ri'
@@ -45,3 +45,5 @@ export const TouchIcon = MdOutlineTouchApp
 export const SearchIcon = IoSearch 
 export const BarberIcon = IoPersonOutline
 export const LeftArrowIcon = FaArrowLeftLong
+export const ScissorIcon = RiScissorsCutLine
+export const RightIcon = FaChevronRight

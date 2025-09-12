@@ -16,8 +16,6 @@ const Public = () => {
 
   const connectedSalonId = localStorage.getItem("ConnectedSalonId")
 
-  console.log("ConnectedSalonId ", connectedSalonId)
-
   const [
     getDefaultSalonByAdmin,
     {

@@ -41,9 +41,6 @@ export function SocketProvider({ children }) {
     }, [adminInfo]);
 
 
-    console.log("getDefaultSalonByAdmindata dsvds ", getDefaultSalonByAdmindata?.response)
-
-
     // Initial sync from adminInfo
     useEffect(() => {
         if (getDefaultSalonByAdminisSuccess) {
