@@ -250,7 +250,7 @@ const JoinForm = () => {
                         border: `0.1rem solid ${colors.queueBorder}`
                     }}
                 >
-                    <h2>Queue Joined With</h2>
+                    <h2>Select Option</h2>
 
                     <button
                         onClick={() => {
