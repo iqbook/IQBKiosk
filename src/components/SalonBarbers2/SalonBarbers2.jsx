@@ -75,6 +75,7 @@ const SalonBarbers2 = () => {
                 className={style.container}
                 style={{
                     backgroundColor: colors.color4,
+                    height: selectBarber ? "calc(var(--primary-height) - 7rem)" : "var(--primary-height)"
                 }}
             >
                 <div>
