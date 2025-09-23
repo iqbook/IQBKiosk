@@ -196,7 +196,7 @@ const SalonBarbers = () => {
                                     >
                                         <div>
                                             <img src={item?.profile?.[0]?.url} alt="" style={{ border: `0.1rem solid ${colors.borderColor}` }} />
-                                            <h4>{item?.name}</h4>
+                                            <h4>{item?.name === "anybarber" ? "Any Barber" : item?.name === "anystylist" ? "Any Stylist" : item?.name}</h4>
                                             <p style={{
                                                 fontSize: "1.4rem",
                                                 textAlign: "center"
@@ -331,7 +331,7 @@ const SalonBarbers = () => {
                             background: colors.tabBackground
                         }}
                     >
-                        <h4>{selectBarber?.name}</h4>
+                        <h4>{selectBarber?.name === "anybarber" ? "Any Barber" : selectBarber?.name === "anystylist" ? "Any Stylist" : selectBarber?.name}</h4>
                         <div>
                             <h3>{getDefaultSalonByAdmindata?.response?.currency} {totalPrice.toFixed(2)}</h3>
                             <p>( {totalServices} {totalServices === 1 ? "service" : "services"} |{" "}

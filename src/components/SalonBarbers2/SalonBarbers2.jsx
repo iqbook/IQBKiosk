@@ -56,7 +56,7 @@ const SalonBarbers2 = () => {
         }
     ] = useGetDefaultSalonByKioskMutation();
 
-     const adminInfo = useSelector(selectCurrentAdminInfo)
+    const adminInfo = useSelector(selectCurrentAdminInfo)
 
     useEffect(() => {
         if (adminInfo?.email) {
@@ -125,7 +125,7 @@ const SalonBarbers2 = () => {
                                     >
                                         <div>
                                             <img src={item?.profile?.[0]?.url} alt="" style={{ border: `0.1rem solid ${colors.borderColor}` }} />
-                                            <h4>{item?.name}</h4>
+                                            <h4>{item?.name === "anybarber" ? "Any Barber" : item?.name === "anystylist" ? "Any Stylist" : item?.name}</h4>
                                             <p style={{
                                                 fontSize: "1.4rem",
                                                 textAlign: "center"

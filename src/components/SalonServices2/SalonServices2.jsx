@@ -441,7 +441,8 @@ const SalonServices2 = () => {
                             background: colors.tabBackground
                         }}
                     >
-                        <h4>{selectBarber?.name}</h4>
+                        {/* <h4>{selectBarber?.name}</h4> */}
+                        <h4>{selectBarber?.name === "anybarber" ? "Any Barber" : selectBarber?.name === "anystylist" ? "Any Stylist" : selectBarber?.name}</h4>
                         <div>
                             <h3>{getDefaultSalonByAdmindata?.response?.currency} {totalPrice.toFixed(2)}</h3>
                             <p>( {totalServices} {totalServices === 1 ? "service" : "services"} |{" "}
