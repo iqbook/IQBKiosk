@@ -9,6 +9,7 @@ import { useGetDefaultSalonByKioskMutation } from "../public/publicApiSlice";
 import { useGetAvailableBarbersForQKioskMutation } from "./salonBarbers2ApiSlice";
 import { formatMinutesToHrMin } from "../../utils/formatMinutesToHrMin";
 import { useGlobal } from "../../context/GlobalContext";
+import { selectCurrentAdminInfo } from "../AdminSignin/adminauthSlice";
 
 const SalonBarbers2 = () => {
 
@@ -54,6 +55,20 @@ const SalonBarbers2 = () => {
             data: getDefaultSalonByAdmindata
         }
     ] = useGetDefaultSalonByKioskMutation();
+
+     const adminInfo = useSelector(selectCurrentAdminInfo)
+
+    useEffect(() => {
+        if (adminInfo?.email) {
+            const salondata = {
+                email: adminInfo?.email,
+                role: adminInfo?.role,
+                salonId: connectedSalonId
+            }
+            getDefaultSalonByAdmin(salondata)
+        }
+    }, [adminInfo])
+
 
 
     const totalPrice = 120;

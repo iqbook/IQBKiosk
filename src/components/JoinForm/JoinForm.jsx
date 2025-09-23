@@ -10,6 +10,7 @@ import { useGlobal } from '../../context/GlobalContext';
 import Modal from '@mui/material/Modal';
 import { Box } from '@mui/material';
 import { PersonIcon, RightIcon, ScissorIcon } from '../../icons';
+import { useGetDefaultSalonByKioskMutation } from '../public/publicApiSlice';
 
 const JoinForm = () => {
 
@@ -154,6 +155,27 @@ const JoinForm = () => {
 
     const [QueueOptionModal, setQueueOptionModal] = useState(false)
 
+    const connectedSalonId = localStorage.getItem("ConnectedSalonId")
+
+    const [
+        getDefaultSalonByAdmin,
+        {
+            data: getDefaultSalonByAdmindata
+        }
+    ] = useGetDefaultSalonByKioskMutation();
+
+
+    useEffect(() => {
+        if (adminInfo?.email) {
+            const salondata = {
+                email: adminInfo?.email,
+                role: adminInfo?.role,
+                salonId: connectedSalonId
+            }
+            getDefaultSalonByAdmin(salondata)
+        }
+    }, [adminInfo])
+
     return (
         <main
             className={style.container}
@@ -263,7 +285,7 @@ const JoinForm = () => {
                     >
                         <div>
                             <div><PersonIcon /></div>
-                            <p>Barber</p>
+                            <p>{getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barber" : "Stylist"}</p>
                         </div>
 
                         <div><RightIcon /></div>
