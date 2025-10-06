@@ -74,7 +74,7 @@
             -o-border-radius: var(--border-radius-primary);
 
             &>div:nth-child(2) {
-                height: 4rem;
+                height: inherit;
                 width: 4rem;
                 position: absolute;
                 top: 0rem;
@@ -103,7 +103,7 @@
                 -ms-border-radius: var(--border-radius-primary);
                 -o-border-radius: var(--border-radius-primary);
 
-                &>div{
+                &>div {
                     min-height: 3.5rem;
                     padding-inline: 1rem;
                     align-content: center;

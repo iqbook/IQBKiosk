@@ -164,7 +164,10 @@ const SalonBarbers = () => {
                 }}
             >
                 <div>
-                    <button onClick={() => navigate("/salonServices")}><LeftArrowIcon /></button>
+                    <button onClick={() => {
+                        setSelectedBarber("")
+                        navigate("/salonServices")
+                    }}><LeftArrowIcon /></button>
                     <p>Select {getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barber" : "Stylist"}</p>
                 </div>
 

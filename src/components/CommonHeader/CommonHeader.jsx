@@ -338,7 +338,7 @@ const CommonHeader = () => {
                                     >
                                         <div onClick={barbersigninClicked}>
                                             <div><AccountIcon /></div>
-                                            <p>Barber signin</p>
+                                            <p>{getDefaultSalonByAdmindata?.response?.salonType === "Barber Shop" ? "Barber" : "Stylist"} signin</p>
                                         </div>
 
                                         <div onClick={salonsettingClicked}>
